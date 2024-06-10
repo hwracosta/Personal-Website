@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/todos">To-Do List</a></li>
+        <li><a href="/music">Music</a></li>
+        <li><a href="/hobbies">Hobbies</a></li>
+    </ul>
+</nav>
+<h1>To-Do List</h1>
+<form th:action="@{/todos}" th:object="${todo}" method="post">
+    <input type="text" th:field="*{description}" placeholder="Enter new to-do with label, e.g., #acads study" required>
+    <button type="submit">Add</button>
+</form>
+<h2>Filter by Label</h2>
+<form th:action="@{/todos/filter}" method="get">
+    <select name="label">
+        <option value="">All</option>
+        <option th:each="label : ${labels}" th:value="${label}" th:text="${label}"></option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+<h2>Active To-Dos</h2>
+<ul>
+    <li th:each="todo : ${todos}">
+        <span th:text="${todo.label != '' ? todo.label + ': ' : ''} + ${todo.description}"></span>
+        <a th:href="@{'/todos/' + ${todo.id} + '/complete'}">Complete</a>
+        <a th:href="@{'/todos/' + ${todo.id} + '/delete'}">Delete</a>
+    </li>
+</ul>
+<h2>Completed To-Dos</h2>
+<ul>
+    <li th:each="todo : ${completedTodos}">
+        <span th:text="${todo.label != '' ? todo.label + ': ' : ''} + ${todo.description}"></span>
+        <a th:href="@{'/todos/' + ${todo.id} + '/incomplete'}">Incomplete</a>
+        <a th:href="@{'/todos/' + ${todo.id} + '/delete-completed'}">Delete</a>
+    </li>
+</ul>
+</body>
+</html>
