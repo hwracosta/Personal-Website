@@ -60,8 +60,8 @@ public class TodoController {
 
     @GetMapping("/filter")
     public String filterTodos(@RequestParam String label, Model model) {
-        List<Todo> todos = todoService.filterByLabel(label);
-        List<Todo> completedTodos = todoService.getCompletedTodos();
+        List<Todo> todos = todoService.filterByLabel(label).stream().filter(todo -> !todo.isCompleted()).toList();
+        List<Todo> completedTodos = todoService.filterByLabel(label).stream().filter(Todo::isCompleted).toList();
         List<String> labels = todoService.getAllLabels();
         model.addAttribute("todos", todos);
         model.addAttribute("completedTodos", completedTodos);
