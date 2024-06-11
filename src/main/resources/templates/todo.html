@@ -4,44 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/todos">To-Do List</a></li>
-        <li><a href="/music">Music</a></li>
-        <li><a href="/hobbies">Hobbies</a></li>
-    </ul>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Personal Website</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/todos">To-Do List</a></li>
+            <li class="nav-item"><a class="nav-link" href="/music">Music</a></li>
+            <li class="nav-item"><a class="nav-link" href="/hobbies">Hobbies</a></li>
+        </ul>
+    </div>
 </nav>
-<h1>To-Do List</h1>
-<form th:action="@{/todos}" th:object="${todo}" method="post">
-    <input type="text" th:field="*{description}" placeholder="Enter new to-do with label, e.g., #acads study" required>
-    <button type="submit">Add</button>
-</form>
-<h2>Filter by Label</h2>
-<form th:action="@{/todos/filter}" method="get">
-    <select name="label">
-        <option value="">All</option>
-        <option th:each="label : ${labels}" th:value="${label}" th:text="${label}"></option>
-    </select>
-    <button type="submit">Filter</button>
-</form>
-<h2>Active To-Dos</h2>
-<ul>
-    <li th:each="todo : ${todos}">
-        <span th:text="${todo.label != '' ? todo.label + ': ' : ''} + ${todo.description}"></span>
-        <a th:href="@{'/todos/' + ${todo.id} + '/complete'}">Complete</a>
-        <a th:href="@{'/todos/' + ${todo.id} + '/delete'}">Delete</a>
-    </li>
-</ul>
-<h2>Completed To-Dos</h2>
-<ul>
-    <li th:each="todo : ${completedTodos}">
-        <span th:text="${todo.label != '' ? todo.label + ': ' : ''} + ${todo.description}"></span>
-        <a th:href="@{'/todos/' + ${todo.id} + '/incomplete'}">Incomplete</a>
-        <a th:href="@{'/todos/' + ${todo.id} + '/delete-completed'}">Delete</a>
-    </li>
-</ul>
+
+<div class="container mt-5">
+    <h1 class="mb-4">To-Do List</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            Add a ToDo Item
+        </div>
+        <div class="card-body">
+            <form id="addTodoForm" th:action="@{/todos}" th:object="${todo}" method="post">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="Enter new to-do with label, e.g., #acads study" required>
+                </div>
+                <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            Filter by Label
+        </div>
+        <div class="card-body">
+            <form id="filterForm" th:action="@{/todos/filter}" method="get">
+                <div class="form-group">
+                    <label for="label">Label</label>
+                    <select name="label" class="form-control" id="label">
+                        <option value="">All</option>
+                        <option th:each="label : ${labels}" th:value="${label}" th:text="${label}"></option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="todoList">
+        <h2>Active To-Dos</h2>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Label</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="todo : ${todos}">
+                <td th:text="${todo.label}"></td>
+                <td th:text="${todo.description}"></td>
+                <td>
+                    <a th:href="@{'/todos/' + ${todo.id} + '/complete'}" class="btn btn-success btn-sm action-link">Complete</a>
+                    <a th:href="@{'/todos/' + ${todo.id} + '/delete'}" class="btn btn-danger btn-sm action-link">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>Completed To-Dos</h2>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Label</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="todo : ${completedTodos}">
+                <td th:text="${todo.label}"></td>
+                <td th:text="${todo.description}"></td>
+                <td>
+                    <a th:href="@{'/todos/' + ${todo.id} + '/incomplete'}" class="btn btn-warning btn-sm action-link">Incomplete</a>
+                    <a th:href="@{'/todos/' + ${todo.id} + '/delete-completed'}" class="btn btn-danger btn-sm action-link">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Handle add todo form submission
+        $('#addTodoForm').submit(function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function(response) {
+                    // Update the todo list without reloading the page
+                    $('#todoList').html($(response).find('#todoList').html());
+                },
+                error: function() {
+                    alert('Error adding todo.');
+                }
+            });
+        });
+
+        // Handle complete, incomplete, and delete actions via AJAX
+        $(document).on('click', '.action-link', function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'GET',
+                url: $(this).attr('href'),
+                success: function(response) {
+                    // Update the todo list without reloading the page
+                    $('#todoList').html($(response).find('#todoList').html());
+                },
+                error: function() {
+                    alert('Error performing action.');
+                }
+            });
+        });
+
+        // Handle filter form submission
+        $('#filterForm').submit(function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function(response) {
+                    // Update the todo list without reloading the page
+                    $('#todoList').html($(response).find('#todoList').html());
+                },
+                error: function() {
+                    alert('Error filtering todos.');
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>

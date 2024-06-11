@@ -55,9 +55,9 @@ public class TodoService {
 
     public List<Todo> filterByLabel(String label) {
         if (label == null || label.isEmpty()) {
-            return todoRepository.findAll().stream().filter(todo -> !todo.isCompleted()).toList();
+            return todoRepository.findAll();
         } else {
-            return todoRepository.findByLabel(label).stream().filter(todo -> !todo.isCompleted()).toList();
+            return todoRepository.findByLabel(label);
         }
     }
 
