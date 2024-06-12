@@ -17,3 +17,6 @@ INSERT INTO song (id, title, artist, album_artwork_url, team_member_id) VALUES (
 INSERT INTO song (id, title, artist, album_artwork_url, team_member_id) VALUES (8, 'What is Love', 'TWICE', 'https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5d/8d/ae/5d8daec6-bf17-9220-6ffb-d69981dd4ef6/00602508874840_Cover.jpg/600x600bb.jpg', 2) ON CONFLICT (id) DO NOTHING;
 INSERT INTO song (id, title, artist, album_artwork_url, team_member_id) VALUES (9, 'Ferrari', 'James Hype, Miggy Dela Rosa', 'https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a9/02/ca/a902ca66-530d-d678-077c-17d9da7533ef/22UMGIM36635.rgb.jpg/600x600bb.jpg', 2) ON CONFLICT (id) DO NOTHING;
 INSERT INTO song (id, title, artist, album_artwork_url, team_member_id) VALUES (10, 'Cool Down', 'Kolohe Kai', 'https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/5d/5d/f2/5d5df202-ea92-43c4-6eb3-bb5dc5beee06/mzi.qkaoftve.jpg/600x600bb.jpg', 2) ON CONFLICT (id) DO NOTHING;
+
+-- Update template, don't forget to change team_member_id and id as well
+UPDATE song SET title = 'title', artist = 'artist', album_artwork_url = 'image link', team_member_id = 1 WHERE id = 1;
