@@ -36,6 +36,37 @@ button {
     font-weight: 500;
     transition: all 0.3s ease;
 }
+.main .music-showcase .buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.hero .left-section .top .buttons button.doc {
+    background: #000;
+    color: #fff;
+}
+
+.hero .left-section .top .buttons button.git:hover {
+    background: #000;
+    color: #fff;
+    border-color: transparent;
+}
+
+.hero .left-section .bottom p {
+    font-size: 14px;
+    color: #606060;
+    margin-bottom: 10px;
+}
+
+.hero .left-section .bottom .icons {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    width: fit-content;
+}
 
 img {
     object-fit: cover;
