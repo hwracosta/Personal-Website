@@ -113,7 +113,6 @@ nav button i {
     margin-left: 200px;
 }
 
-/* Additional styling if needed */
 .music-showcase h2.music-title {
     font-size: 24px;
     color: #333;
@@ -154,7 +153,7 @@ nav button i {
     color: #000;
     border: 1px solid #dedede;
     padding: 5px 20px; /
-    border-radius: 12px;
+border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;

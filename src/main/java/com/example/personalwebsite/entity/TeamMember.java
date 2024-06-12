@@ -5,15 +5,16 @@ import java.util.List;
 
 @Entity
 public class TeamMember {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "teamMember", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "teamMember")
     private List<Song> songs;
 
-    // Getters and Setters
+    // Getters and setters
     public Long getId() {
         return id;
     }

@@ -16,12 +16,4 @@ public class SongService {
     public List<Song> getAllSongs() {
         return songRepository.findAll();
     }
-
-    public Song addSong(Song song) {
-        return songRepository.save(song);
-    }
-
-    public void deleteSong(Long id) {
-        songRepository.deleteById(id);
-    }
 }

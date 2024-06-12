@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
-  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>Personal Website | Jaydee and Harry</title>
 </head>
 
 <body>
-
 <nav>
   <div class="nav-links">
     <a href="/">Homepage</a>
-    <a href="/music">Our Music Wrapped</a>
+    <a href="/songs">Our Music Wrapped</a>
     <a href="/hobbies">Our Hobbies</a>
   </div>
   <button class="ToDobtn" onclick="location.href='/todos'">To-do List</button>
@@ -26,84 +25,28 @@
     <p class="music-info">Jaydee and Harry present to you the definitive list of the greatest songs of all time. Don't agree? Send us an email.</p>
 
     <div class="buttons">
-      <button class="git"><i class="fab fa-spotify"></i> See Our Playlist</button>
+      <button class="git"><i class="fab fa-spotify"></i> Check Our Faves</button>
     </div>
   </div>
-  <div class="music-cards">
+  <div class="music-cards loaded">
     <div class="card">
-      <h2>Jaydee's Top Songs</h2>
-      <div class="song">
-        <img src="/static/images/album-art1.jpg" alt="Album Art">
+      <h2>Jaydee's List</h2>
+      <div th:each="song : ${jaydeeSongs}" class="song">
+        <img th:src="${song.albumArtworkUrl}" alt="Album Art">
         <div class="song-info">
-          <h3>1. Song Title</h3>
-          <p>Artist Name</p>
-        </div>
-      </div>
-      <div class="song">
-        <img src="/static/images/album-art2.jpg" alt="Album Art">
-        <div class="song-info">
-          <h3>2. Song Title</h3>
-          <p>Artist Name</p>
-        </div>
-      </div>
-      <div class="song">
-        <img src="/static/images/album-art3.jpg" alt="Album Art">
-        <div class="song-info">
-          <h3>3. Song Title</h3>
-          <p>Artist Name</p>
-        </div>
-      </div>
-      <div class="song">
-        <img src="/static/images/album-art4.jpg" alt="Album Art">
-        <div class="song-info">
-          <h3>4. Song Title</h3>
-          <p>Artist Name</p>
-        </div>
-      </div>
-      <div class="song">
-        <img src="/static/images/album-art5.jpg" alt="Album Art">
-        <div class="song-info">
-          <h3>5. Song Title</h3>
-          <p>Artist Name</p>
+          <h3 th:text="${song.title}">Song Title</h3>
+          <p th:text="${song.artist}">Artist Name</p>
         </div>
       </div>
     </div>
 
     <div class="card">
-      <h2>Harry's Top Songs</h2>
-      <div class="song">
-        <img src="/static/images/album-art1.jpg" alt="Album Art">
+      <h2>Harry's List</h2>
+      <div th:each="song : ${harrySongs}" class="song">
+        <img th:src="${song.albumArtworkUrl}" alt="Album Art">
         <div class="song-info">
-          <h3>1. Song Title</h3>
-          <p>Artist Name</p>
-        </div>
-      </div>
-      <div class="song">
-        <img src="/static/images/album-art2.jpg" alt="Album Art">
-        <div class="song-info">
-          <h3>2. Song Title</h3>
-          <p>Artist Name</p>
-        </div>
-      </div>
-      <div class="song">
-        <img src="/static/images/album-art3.jpg" alt="Album Art">
-        <div class="song-info">
-          <h3>3. Song Title</h3>
-          <p>Artist Name</p>
-        </div>
-      </div>
-      <div class="song">
-        <img src="/static/images/album-art4.jpg" alt="Album Art">
-        <div class="song-info">
-          <h3>4. Song Title</h3>
-          <p>Artist Name</p>
-        </div>
-      </div>
-      <div class="song">
-        <img src="/static/images/album-art5.jpg" alt="Album Art">
-        <div class="song-info">
-          <h3>5. Song Title</h3>
-          <p>Artist Name</p>
+          <h3 th:text="${song.title}">Song Title</h3>
+          <p th:text="${song.artist}">Artist Name</p>
         </div>
       </div>
     </div>
