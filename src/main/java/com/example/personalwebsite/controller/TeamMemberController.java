@@ -20,6 +20,7 @@ public class TeamMemberController {
     public String getAllTeamMembers(Model model) {
         List<TeamMember> teamMembers = teamMemberService.getAllTeamMembers();
         model.addAttribute("teamMembers", teamMembers);
+        model.addAttribute("teamMember", new TeamMember());
         return "teamMembers";
     }
 

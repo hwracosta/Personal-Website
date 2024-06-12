@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
-  <link rel="stylesheet" href="../static/css/styles.css">
-  <title>Personal Website | Jaydee and Harry </title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <title>Personal Website | Jaydee and Harry</title>
 </head>
 
 <body>
 
 <nav>
   <div class="nav-links">
-    <a href="index.html">Homepage </a>
-    <a href="music.html">Our Music Wrapped</a>
-    <a href="hobbies.html">Our Hobbies</a>
+    <a th:href="@{/}">Homepage</a>
+    <a th:href="@{/music}">Our Music Wrapped</a>
+    <a th:href="@{/hobbies}">Our Hobbies</a>
   </div>
-  <button class = "ToDobtn"> To-do List</button>
+  <button class="ToDobtn" th:onclick="|location.href='@{/todos}'|">To-do List</button>
 </nav>
 
 <div class="hero">
@@ -26,15 +26,14 @@
       <span class="blur"></span>
       <span class="blur"></span>
       <h4>WELCOME TO OUR PERSONAL WEBSITE</h4>
-      <H1>Hi, We're <span> Jaydee & Harry</span>, Aspiring Developers</H1>
+      <h1>Hi, We're <span>Jaydee & Harry</span>, Aspiring Developers</h1>
       <p>
         We're sophomore Computer Science students based in Manila, Philippines, specializing in Statistical Computing and Health Informatics. Experienced in machine learning, data science, and full-stack development using Python, Java, PHP, and Laravel.
       </p>
 
-
       <div class="buttons">
         <button class="doc">Hire Us Now <i class="ri-arrow-right-line"></i></button>
-        <a href="../static/others/Resume_SALAZAR.pdf" target="_blank">
+        <a th:href="@{/static/others/Resume_SALAZAR.pdf}" target="_blank">
           <button class="git">Our Resumes</button>
         </a>
       </div>
@@ -51,7 +50,7 @@
     </div>
   </div>
 
-  <img src="../static/images/GonxKillua.JPG">
+  <img th:src="@{/images/GonxKillua.JPG}">
 
 </div>
 
@@ -61,32 +60,30 @@
   <div class="items">
     <div class="item">
       <div class="inner">
-        <img src="../static/images/machinelearningpic.png">
+        <img th:src="@{/images/machinelearningpic.png}">
         <a href="https://colab.research.google.com/drive/1Lr42pPbLUmZqo6F6Mgl72fiemZvLWCCH?usp=sharing">Term Subscription Predictor</a>
-        <p>a machine learning model made using Python to target bank clients likely to open term deposits, utilizing pandas, scikit-learn, and numpy.
-        </p>
+        <p>a machine learning model made using Python to target bank clients likely to open term deposits, utilizing pandas, scikit-learn, and numpy.</p>
       </div>
     </div>
     <div class="item">
       <div class="inner">
-        <img src="../static/images/enrollmentsystem.jpg">
+        <img th:src="@{/images/enrollmentsystem.jpg}">
         <a href="#">University Enrollment System</a>
         <p>A web-based enrollment system for the University of the Philippines Manila using PostgreSQL and Laravel, allowing students to enroll in subjects and professors to manage classes and student enrollments.</p>
       </div>
     </div>
     <div class="item">
       <div class="inner">
-        <img src="../static/images/quinepic.png">
+        <img th:src="@{/images/quinepic.png}">
         <a href="#">Quine-McCluskey Simulator</a>
         <p>A program made using Java that handles Boolean expressions using the Quine-McCluskey algorithm, finding prime implicants to output a simplified expression.</p>
       </div>
     </div>
     <div class="item">
       <div class="inner">
-        <img src="../static/images/inventorysystempic.jpg">
+        <img th:src="@{/images/inventorysystempic.jpg}">
         <a href="https://github.com/JaydeeSalazar/InventoryManagementSystem-CMSC-23-Machine-Problem-.git"> Restaurant Inventory System</a>
-        <p>an inventory system made using Java for a Japanese restaurant, collaborating through
-          GitHub and applying object-oriented programming.</p>
+        <p>an inventory system made using Java for a Japanese restaurant, collaborating through GitHub and applying object-oriented programming.</p>
       </div>
     </div>
   </div>
