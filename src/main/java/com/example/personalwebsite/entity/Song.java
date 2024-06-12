@@ -1,14 +1,10 @@
 package com.example.personalwebsite.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.*;
 
 @Entity
 public class Song {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,7 +16,7 @@ public class Song {
     @JoinColumn(name = "team_member_id")
     private TeamMember teamMember;
 
-    // Getters and Setters
+    // Getters and setters
     public Long getId() {
         return id;
     }

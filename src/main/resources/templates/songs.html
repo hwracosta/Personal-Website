@@ -3,32 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Songs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Personal Website | Jaydee and Harry</title>
 </head>
+
 <body>
 <nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/todos">To-Do List</a></li>
-    <li><a href="/music">Music</a></li>
-    <li><a href="/hobbies">Hobbies</a></li>
-  </ul>
+  <div class="nav-links">
+    <a href="/">Homepage</a>
+    <a href="/songs">Our Music Wrapped</a>
+    <a href="/hobbies">Our Hobbies</a>
+  </div>
+  <button class="ToDobtn" onclick="location.href='/todos'">To-do List</button>
 </nav>
-<h1>Songs</h1>
-<form th:action="@{/songs}" th:object="${song}" method="post">
-  <input type="text" th:field="*{title}" placeholder="Enter song title" required>
-  <input type="text" th:field="*{artist}" placeholder="Enter artist name" required>
-  <input type="text" th:field="*{albumArtworkUrl}" placeholder="Enter album artwork URL">
-  <select th:field="*{teamMember.id}">
-    <option th:each="teamMember : ${teamMembers}" th:value="${teamMember.id}" th:text="${teamMember.name}"></option>
-  </select>
-  <button type="submit">Add</button>
-</form>
-<ul>
-  <li th:each="song : ${songs}">
-    <span th:text="${song.title}"></span> by <span th:text="${song.artist}"></span>
-    <a th:href="@{'/songs/' + ${song.id} + '/delete'}">Delete</a>
-  </li>
-</ul>
+
+<main>
+  <div class="music-showcase">
+    <h2 class="music-title">Need Some Music Recommendations?</h2>
+    <p class="music-info">Jaydee and Harry present to you the definitive list of the greatest songs of all time. Don't agree? Send us an email.</p>
+
+    <div class="buttons">
+      <button class="git"><i class="fab fa-spotify"></i> Check Our Faves</button>
+    </div>
+  </div>
+  <div class="music-cards loaded">
+    <div class="card">
+      <h2>Jaydee's List</h2>
+      <div th:each="song : ${jaydeeSongs}" class="song">
+        <img th:src="${song.albumArtworkUrl}" alt="Album Art">
+        <div class="song-info">
+          <h3 th:text="${song.title}">Song Title</h3>
+          <p th:text="${song.artist}">Artist Name</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Harry's List</h2>
+      <div th:each="song : ${harrySongs}" class="song">
+        <img th:src="${song.albumArtworkUrl}" alt="Album Art">
+        <div class="song-info">
+          <h3 th:text="${song.title}">Song Title</h3>
+          <p th:text="${song.artist}">Artist Name</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <a href="#">For business inquiries: adsalasar3@up.edu.ph, hracosta@up.edu.ph</a>
+  <p>© 2024 Harry and Jaydee Inc.</p>
+</footer>
+
+<script>
+  window.onload = function() {
+    document.querySelector(".music-cards").classList.add("loaded");
+  };
+</script>
+
 </body>
 </html>
