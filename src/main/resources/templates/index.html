@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:mailto="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="UTF-8">
@@ -45,7 +45,7 @@
         <a href="https://www.linkedin.com/in/jaydeesalazar/" target="_blank">
           <i class="ri-linkedin-box-line"></i>
         </a>
-        <i class="ri-instagram-line"></i>
+        <i class="ri-instagram-line" onclick="openInstagramAccounts()"></i>
       </div>
     </div>
   </div>
@@ -68,14 +68,14 @@
     <div class="item">
       <div class="inner">
         <img th:src="@{/images/enrollmentsystem.jpg}">
-        <a href="#">University Enrollment System</a>
+        <a href="https://github.com/krispybataa/machine-problem.git">University Enrollment System</a>
         <p>A web-based enrollment system for the University of the Philippines Manila using PostgreSQL and Laravel, allowing students to enroll in subjects and professors to manage classes and student enrollments.</p>
       </div>
     </div>
     <div class="item">
       <div class="inner">
         <img th:src="@{/images/quinepic.png}">
-        <a href="#">Quine-McCluskey Simulator</a>
+        <a href="https://github.com/JaydeeSalazar/QuineMcCluskeySimulator-CMSC-130-MachineProblem1.git">Quine-McCluskey Simulator</a>
         <p>A program made using Java that handles Boolean expressions using the Quine-McCluskey algorithm, finding prime implicants to output a simplified expression.</p>
       </div>
     </div>
@@ -95,20 +95,32 @@
     <div class="item">
       <a href="#">Schedule a call</a>
       <p>Let's discuss your project ideas and how I can help you.</p>
-      <button>Schedule a Call</button>
+      <a href="https://calendar.google.com/calendar/u/0/r/eventedit?add=adsalazar3@up.edu.ph,hracosta@up.edu.ph" target="_blank">
+        <button>Schedule a Call</button>
+      </a>
+
     </div>
     <div class="item">
       <a href="#">Explore Our Works</a>
       <p>View our portfolio to see what we can do for you.</p>
-      <button>View Our Works</button>
+      <a href="https://github.com/hwracosta/Personal-Website.git" target="_blank">
+        <button>View Our Works</button>
+      </a>
     </div>
   </div>
 </div>
 
 <footer>
-  <a href="#">For business inquiries: adsalasar3@up.edu.ph, hracosta@up.edu.ph</a>
+  <a href="mailto:adsalazar3@up.edu.ph,hracosta@up.edu.ph?subject=Business%20Inquiry">For business inquiries: adsalazar3@up.edu.ph, hracosta@up.edu.ph</a>
   <p>© 2024 Harry and Jaydee Inc.</p>
 </footer>
+
+<script>
+  function openInstagramAccounts() {
+      window.open("https://www.instagram.com/hazza.costa/", "_blank");
+      window.open("https://www.instagram.com/ajmdsalazar/", "_blank");
+  }
+</script>
 
 </body>
 
