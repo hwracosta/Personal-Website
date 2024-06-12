@@ -1,7 +1,7 @@
 # Personal Website
 ### By Harry Acosta & Jaydee Salazar
 
-<div align="left" style="display: flex; justify-content: center; align-items: center; width: 100%;">
+<div align="center" style="display: flex; justify-content: center; align-items: center; width: 100%;">
     <a href="https://raw.githubusercontent.com/hwracosta/Personal-Website/main/src/main/resources/static/images/GonxKillua.JPG?token=GHSAT0AAAAAACTMV6CMIPEHWPAKMDCQCZ2UZTJ33SA" target="_blank">
         <img src="https://raw.githubusercontent.com/hwracosta/Personal-Website/main/src/main/resources/static/images/GonxKillua.JPG?token=GHSAT0AAAAAACTMV6CMIPEHWPAKMDCQCZ2UZTJ33SA" width="400" alt="Project Banner">
     </a>
@@ -121,5 +121,5 @@ WHERE id = 1;
 ```
 
 ## Contact Us
-- **ACOSTA II, Harry William R.** | [hracosta@up.edu.ph](mailto:hracosta@up.edu.ph)
+- **ACOSTA, Harry William II R.** | [hracosta@up.edu.ph](mailto:hracosta@up.edu.ph)
 - **Salazar, Alexis Jaydee Migyel D.** | [adsalazar@up.edu.ph](mailto:adsalazar@up.edu.ph)
