@@ -200,6 +200,7 @@ border-radius: 12px;
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
+    color: black;
 }
 
 .song {
@@ -210,20 +211,21 @@ border-radius: 12px;
 }
 
 .song img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border-radius: 8px;
 }
 
 .song-info h3 {
-    font-size: 18px;
+    font-size: 21px;
     margin: 0;
+    color: black
 }
 
 .song-info p {
-    font-size: 14px;
+    font-size: 15px;
     margin: 0;
-    color: #bbb;
+    color: black;
 }
 
 .hero .left-section .top h4 {
@@ -517,14 +519,18 @@ footer a:hover {
     }
 }
 
-@media screen and (max-width: 992px) {
-    .card {
+@media screen and (max-width: 992px)
+ {
+    .card
+     {
         width: 200px;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .card {
+@media screen and (max-width: 768px)
+ {
+    .card
+    {
         width: 100%;
     }
 }

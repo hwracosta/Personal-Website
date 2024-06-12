@@ -25,10 +25,13 @@
     <p class="music-info">Jaydee and Harry present to you the definitive list of the greatest songs of all time. Don't agree? Send us an email.</p>
 
     <div class="buttons">
-      <button class="git"><i class="fab fa-spotify"></i> Check Our Faves</button>
+      <a href="https://open.spotify.com/playlist/4KenetlX9SSX2jM5YMntge?si=6oUVCBz8Toe2k6QJ2CN_aA&pi=a-tBEBLtCcS5-H" target="_blank">
+        <button class="git"><i class="fab fa-spotify"></i> Shuffle Our Playlist</button>
+      </a>
     </div>
+
   </div>
-  <div class="music-cards loaded">
+  <div class="music-cards">
     <div class="card">
       <h2>Jaydee's List</h2>
       <div th:each="song : ${jaydeeSongs}" class="song">
