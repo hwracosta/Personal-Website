@@ -200,7 +200,7 @@ border-radius: 12px;
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
-    color: black;
+    color: white;
 }
 
 .song {
@@ -211,21 +211,21 @@ border-radius: 12px;
 }
 
 .song img {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
     border-radius: 8px;
 }
 
 .song-info h3 {
     font-size: 21px;
     margin: 0;
-    color: black
+    color: white;
 }
 
 .song-info p {
     font-size: 15px;
     margin: 0;
-    color: black;
+    color: #bbb;
 }
 
 .hero .left-section .top h4 {
