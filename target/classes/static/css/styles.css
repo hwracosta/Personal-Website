@@ -200,6 +200,7 @@ border-radius: 12px;
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
+    color: white;
 }
 
 .song {
@@ -210,18 +211,19 @@ border-radius: 12px;
 }
 
 .song img {
-    width: 50px;
-    height: 50px;
+    width: 95px;
+    height: 95px;
     border-radius: 8px;
 }
 
 .song-info h3 {
-    font-size: 18px;
+    font-size: 21px;
     margin: 0;
+    color: white;
 }
 
 .song-info p {
-    font-size: 14px;
+    font-size: 15px;
     margin: 0;
     color: #bbb;
 }
@@ -517,14 +519,18 @@ footer a:hover {
     }
 }
 
-@media screen and (max-width: 992px) {
-    .card {
+@media screen and (max-width: 992px)
+ {
+    .card
+     {
         width: 200px;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .card {
+@media screen and (max-width: 768px)
+ {
+    .card
+    {
         width: 100%;
     }
 }
