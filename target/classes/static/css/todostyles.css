@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 45px;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    padding: 5px 20px;
+    background: #000 !important;
+    color: #fff !important; /
+    border: 1px solid #000 !important;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+img {
+    object-fit: cover;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    border: 1px solid #e8e8e8;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 16px;
+    padding: 12px;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+nav .nav-links a {
+    position: relative;
+    padding: 10px 0 8px 0;
+    font-size: 14px;
+    color: #606060;
+    transition: all 0.3s ease;
+}
+
+nav .nav-links a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+nav .nav-links a:hover::after {
+    width: 100%;
+}
+
+nav button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-size: 14px;
+    height: 32px;
+    width: 122px;
+    background: #000 !important;
+    color: #fff !important;
+    border-radius: 8px;
+    border: 1px solid #000 !important;
+    transition: all 0.3s ease;
+}
+
+nav button:hover {
+    color: #000 !important;
+    background: #fff !important;
+    border-color: #dedede;
+}
+
+nav button i {
+    font-size: 20px;
+}
+
+.container {
+    margin-top: 100px;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+
+.card {
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #dedede;
+}
+
+table th {
+    background-color: #000;
+    color: #fff;
+}
+
+thead, tbody {
+    display: block;
+}
+
+thead tr, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead {
+    width: calc(100% - 1em);
+    margin: 0.5em;
+}
+
+tbody {
+    width: calc(100% - 1em);
+    margin: 0.5em;
+}
+
+table thead tr th:first-child {
+    border-top-left-radius: 12px;
+}
+
+table thead tr th:last-child {
+    border-top-right-radius: 12px;
+}
+
+table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.description-column {
+    width: 50%;
+}
+
+footer {
+    background: #1f1f1f;
+    border-radius: 24px 24px 0 0;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: auto;
+}
+
+footer p,
+footer a {
+    font-size: 13px;
+    color: #606060;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media screen and (max-width: 1280px) {
+    nav,
+    nav .nav-links {
+        gap: 16px;
+    }
+
+    nav button {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}

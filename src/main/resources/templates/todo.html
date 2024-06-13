@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website | Jaydee and Harry</title>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/css/todostyles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/todostyles.css">
 </head>
 <body>
 
@@ -34,7 +31,7 @@
                     <label for="description">Description</label>
                     <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="Enter a new task with a label (e.g. #study)" required>
                 </div>
-                <button type="submit" class="btn btn-success common-btn">     Add     </button>
+                <button type="submit" class="btn btn-success common-btn">Add</button>
             </form>
         </div>
     </div>
@@ -57,7 +54,7 @@
         </div>
     </div>
 
-    <div class="todo-tables">
+    <div id="todoList">
         <h2>Active Tasks</h2>
         <table class="table table-bordered active-todos">
             <thead>
@@ -119,6 +116,8 @@
                 success: function(response) {
                     // Update the todo list without reloading the page
                     $('#todoList').html($(response).find('#todoList').html());
+                    $('#description').val(''); // Clear the form
+                    updateFilterOptions($(response).find('#label option'));
                 },
                 error: function() {
                     alert('Error adding todo.');
@@ -135,6 +134,7 @@
                 success: function(response) {
                     // Update the todo list without reloading the page
                     $('#todoList').html($(response).find('#todoList').html());
+                    updateFilterOptions($(response).find('#label option'));
                 },
                 error: function() {
                     alert('Error performing action.');
@@ -158,6 +158,10 @@
                 }
             });
         });
+
+        function updateFilterOptions(options) {
+            $('#label').html(options);
+        }
     });
 </script>
 

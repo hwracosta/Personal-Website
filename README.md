@@ -12,13 +12,19 @@
 This is a personal website project that showcases different pages such as a to-do list, hobbies, and a music page with a list of our current favorite songs. The project uses Spring Boot for the backend, PostgreSQL for the database, and Thymeleaf, HTML, and CSS for the frontend. This project is our machine problem for the CMSC 121 requirement.
 
 ## Technologies Used
-
 - **Java**: The main programming language used for developing the backend.
 - **Spring Boot**: A framework that simplifies the setup and development of new Spring applications.
 - **Thymeleaf**: A Java template engine for processing and creating HTML, XML, JavaScript, CSS, and text.
+- **Ajax**: Allows asynchronous updates to web pages without reloading the entire page.
 - **PostgreSQL**: The database management system used to store application data.
 - **HTML/CSS**: Used for structuring and styling the web pages.
 - **JavaScript**: Used for adding interactive behavior to web pages.
+
+## Thymeleaf
+Thymeleaf is a modern server-side Java template engine for web and standalone environments. It allows dynamic content rendering with plain HTML and provides features like natural templating, meaning the templates can be viewed in a browser without being served from a server.
+
+## Ajax
+AJAX (Asynchronous JavaScript and XML) is a technique for creating fast and dynamic web pages. It allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that parts of a web page can be updated without reloading the whole page.
 
 ## Features
 #### Home Page
@@ -90,10 +96,6 @@ This is a personal website project that showcases different pages such as a to-d
 
 4. **Access the application**:
     Open a web browser and navigate to `http://localhost:8080`.
-
-## Thymeleaf
-
-Thymeleaf is a modern server-side Java template engine for web and standalone environments. It allows dynamic content rendering with plain HTML and provides features like natural templating, meaning the templates can be viewed in a browser without being served from a server.
 
 # Using The Program
 ## 1. To-Do List
