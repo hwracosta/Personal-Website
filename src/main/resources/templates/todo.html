@@ -32,9 +32,9 @@
             <form id="addTodoForm" th:action="@{/todos}" th:object="${todo}" method="post">
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="Enter new to-do with label, e.g., #acads study" required>
+                    <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="Enter a new task with a label (e.g. #study)" required>
                 </div>
-                <button type="submit" class="btn btn-success">Add</button>
+                <button type="submit" class="btn btn-success common-btn">     Add     </button>
             </form>
         </div>
     </div>
@@ -52,7 +52,7 @@
                         <option th:each="label : ${labels}" th:value="${label}" th:text="${label}"></option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Filter</button>
+                <button type="submit" class="btn btn-primary common-btn">Filter</button>
             </form>
         </div>
     </div>
@@ -72,7 +72,7 @@
                 <td th:text="${todo.label}"></td>
                 <td class="description-column" th:text="${todo.description}"></td>
                 <td>
-                    <a th:href="@{'/todos/' + ${todo.id} + '/complete'}" class="btn btn-success btn-sm action-link">Complete</a>
+                    <a th:href="@{'/todos/' + ${todo.id} + '/complete'}" class="btn btn-success btn-sm action-link">Make Complete</a>
                     <a th:href="@{'/todos/' + ${todo.id} + '/delete'}" class="btn btn-danger btn-sm action-link">Delete</a>
                 </td>
             </tr>
@@ -93,7 +93,7 @@
                 <td th:text="${todo.label}"></td>
                 <td class="description-column" th:text="${todo.description}"></td>
                 <td>
-                    <a th:href="@{'/todos/' + ${todo.id} + '/incomplete'}" class="btn btn-warning btn-sm action-link">Incomplete</a>
+                    <a th:href="@{'/todos/' + ${todo.id} + '/incomplete'}" class="btn btn-warning btn-sm action-link">Move to Active</a>
                     <a th:href="@{'/todos/' + ${todo.id} + '/delete-completed'}" class="btn btn-danger btn-sm action-link">Delete</a>
                 </td>
             </tr>

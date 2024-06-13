@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 45px; /* Adjust this value to move the content below the navbar */
+    padding-top: 45px;
 }
 
 main {
@@ -27,8 +27,9 @@ button {
     font-size: 16px;
     border: none;
     padding: 5px 20px;
-    background: #fff;
-    border: 1px solid #dedede;
+    background: #000 !important;
+    color: #fff !important; /
+    border: 1px solid #000 !important;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -92,16 +93,16 @@ nav button {
     font-size: 14px;
     height: 32px;
     width: 122px;
-    background: #000;
-    color: #fff;
+    background: #000 !important;
+    color: #fff !important;
     border-radius: 8px;
-    border: 1px solid transparent;
+    border: 1px solid #000 !important;
     transition: all 0.3s ease;
 }
 
 nav button:hover {
-    color: #000;
-    background: #fff;
+    color: #000 !important;
+    background: #fff !important;
     border-color: #dedede;
 }
 
@@ -110,15 +111,23 @@ nav button i {
 }
 
 .container {
-    margin-top: 100px; /* Ensure enough space below the navbar */
+    margin-top: 100px;
     padding: 20px;
-    overflow-y: auto; /* Enables vertical scrolling if content overflows */
-    max-height: calc(100vh - 200px); /* Adjusts the height to ensure footer is visible */
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+
+.card {
+    border-radius: 12px;
 }
 
 table {
     width: 100%;
-    table-layout: fixed; /* Ensures the table layout is fixed */
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 table th,
@@ -128,8 +137,49 @@ table td {
     border: 1px solid #dedede;
 }
 
+table th {
+    background-color: #000;
+    color: #fff;
+}
+
+thead, tbody {
+    display: block;
+}
+
+thead tr, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead {
+    width: calc(100% - 1em);
+    margin: 0.5em;
+}
+
+tbody {
+    width: calc(100% - 1em);
+    margin: 0.5em;
+}
+
+table thead tr th:first-child {
+    border-top-left-radius: 12px;
+}
+
+table thead tr th:last-child {
+    border-top-right-radius: 12px;
+}
+
+table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
 .description-column {
-    width: 50%; /* Adjust the width as needed */
+    width: 50%;
 }
 
 footer {
@@ -171,12 +221,12 @@ footer p {
 
 @media screen and (max-width: 992px) {
     .card {
-        width: 200px; /* Adjust this value for medium screens */
+        width: 200px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .card {
-        width: 100%; /* Full width for small screens */
+        width: 100%;
     }
 }
