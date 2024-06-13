@@ -4,20 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hobbies Page</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/todos">To-Do List</a></li>
-    <li><a href="/music">Music</a></li>
-    <li><a href="/hobbies">Hobbies</a></li>
-  </ul>
+  <div class="nav-links">
+    <a href="/">Homepage</a>
+    <a href="/songs">Our Music Wrapped</a>
+    <a href="/hobbies">Our Hobbies</a>
+  </div>
+  <button class="ToDobtn" onclick="location.href='/todos'">To-do List</button>
 </nav>
-<h1>Hobbies Page</h1>
-<div>
-  <!-- Hobbies content will go here -->
+
+<div class="hobbies-container">
+  <div class="hobbies-slide">
+
+    <div class="hobbies-item" style="background-image: url(https://i.ibb.co/qCkd9jS/img1.jpg);">
+      <div class="hobbies-content">
+        <div class="hobbies-name">Hobby 1</div>
+        <div class="hobbies-des">Description for hobby 1.</div>
+        <button>See More</button>
+      </div>
+    </div>
+    <div class="hobbies-item" style="background-image: url(https://i.ibb.co/jrRb11q/img2.jpg);">
+      <div class="hobbies-content">
+        <div class="hobbies-name">Hobby 2</div>
+        <div class="hobbies-des">Description for hobby 2.</div>
+        <button>See More</button>
+      </div>
+    </div>
+    <div class="hobbies-item" style="background-image: url(https://i.ibb.co/NSwVv8D/img3.jpg);">
+      <div class="hobbies-content">
+        <div class="hobbies-name">Hobby 3</div>
+        <div class="hobbies-des">Description for hobby 3.</div>
+        <button>See More</button>
+      </div>
+    </div>
+    <div class="hobbies-item" style="background-image: url(https://i.ibb.co/Bq4Q0M8/img4.jpg);">
+      <div class="hobbies-content">
+        <div class="hobbies-name">Hobby 4</div>
+        <div class="hobbies-des">Description for hobby 4.</div>
+        <button>See More</button>
+      </div>
+    </div>
+    <div class="hobbies-item" style="background-image: url(https://i.ibb.co/jTQfmTq/img5.jpg);">
+      <div class="hobbies-content">
+        <div class="hobbies-name">Hobby 5</div>
+        <div class="hobbies-des">Description for hobby 5.</div>
+        <button>See More</button>
+      </div>
+    </div>
+    <div class="hobbies-item" style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg);">
+      <div class="hobbies-content">
+        <div class="hobbies-name">Hobby 6</div>
+        <div class="hobbies-des">Description for hobby 6.</div>
+        <button>See More</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hobbies-button">
+    <button class="hobbies-prev"><i class="fa-solid fa-arrow-left"></i></button>
+    <button class="hobbies-next"><i class="fa-solid fa-arrow-right"></i></button>
+  </div>
 </div>
+
+<footer>
+  <a href="mailto:adsalazar3@up.edu.ph,hracosta@up.edu.ph?subject=Business%20Inquiry">For business inquiries: adsalazar3@up.edu.ph, hracosta@up.edu.ph</a>
+  <p>© 2024 Harry and Jaydee Inc.</p>
+</footer>
+
+<script>
+  let next = document.querySelector('.hobbies-next');
+  let prev = document.querySelector('.hobbies-prev');
+
+  next.addEventListener('click', function(){
+      let items = document.querySelectorAll('.hobbies-item');
+      document.querySelector('.hobbies-slide').appendChild(items[0]);
+  });
+
+  prev.addEventListener('click', function(){
+      let items = document.querySelectorAll('.hobbies-item');
+      document.querySelector('.hobbies-slide').prepend(items[items.length - 1]);
+  });
+</script>
+
 </body>
 </html>
