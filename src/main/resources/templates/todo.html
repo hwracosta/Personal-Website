@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>Personal Website | Jaydee and Harry</title>
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="todostyles.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Personal Website</a>
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/todos">To-Do List</a></li>
-            <li class="nav-item"><a class="nav-link" href="/songs">Music</a></li>
-            <li class="nav-item"><a class="nav-link" href="/hobbies">Hobbies</a></li>
-        </ul>
+<nav>
+    <div class="nav-links">
+        <a th:href="@{/}">Homepage</a>
+        <a th:href="@{/songs}">Our Music Wrapped</a>
+        <a th:href="@{/hobbies}">Our Hobbies</a>
     </div>
+    <button class="ToDobtn" th:onclick="|location.href='@{/todos}'|">To-do List</button>
 </nav>
 
 <div class="container mt-5">
-    <h1 class="mb-4">To-Do List</h1>
-
     <div class="card mb-4">
         <div class="card-header">
-            Add a ToDo Item
+            Add a Task
         </div>
         <div class="card-body">
             <form id="addTodoForm" th:action="@{/todos}" th:object="${todo}" method="post">
@@ -61,20 +57,20 @@
         </div>
     </div>
 
-    <div id="todoList">
-        <h2>Active To-Dos</h2>
-        <table class="table table-bordered">
+    <div class="todo-tables">
+        <h2>Active Tasks</h2>
+        <table class="table table-bordered active-todos">
             <thead>
             <tr>
                 <th>Label</th>
-                <th>Description</th>
+                <th class="description-column">Description</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="todo : ${todos}">
                 <td th:text="${todo.label}"></td>
-                <td th:text="${todo.description}"></td>
+                <td class="description-column" th:text="${todo.description}"></td>
                 <td>
                     <a th:href="@{'/todos/' + ${todo.id} + '/complete'}" class="btn btn-success btn-sm action-link">Complete</a>
                     <a th:href="@{'/todos/' + ${todo.id} + '/delete'}" class="btn btn-danger btn-sm action-link">Delete</a>
@@ -83,19 +79,19 @@
             </tbody>
         </table>
 
-        <h2>Completed To-Dos</h2>
-        <table class="table table-bordered">
+        <h2>Completed Tasks</h2>
+        <table class="table table-bordered completed-todos">
             <thead>
             <tr>
                 <th>Label</th>
-                <th>Description</th>
+                <th class="description-column">Description</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="todo : ${completedTodos}">
                 <td th:text="${todo.label}"></td>
-                <td th:text="${todo.description}"></td>
+                <td class="description-column" th:text="${todo.description}"></td>
                 <td>
                     <a th:href="@{'/todos/' + ${todo.id} + '/incomplete'}" class="btn btn-warning btn-sm action-link">Incomplete</a>
                     <a th:href="@{'/todos/' + ${todo.id} + '/delete-completed'}" class="btn btn-danger btn-sm action-link">Delete</a>
@@ -105,6 +101,11 @@
         </table>
     </div>
 </div>
+
+<footer>
+    <a href="mailto:adsalazar3@up.edu.ph,hracosta@up.edu.ph?subject=Business%20Inquiry">For business inquiries: adsalazar3@up.edu.ph, hracosta@up.edu.ph</a>
+    <p>© 2024 Harry and Jaydee Inc.</p>
+</footer>
 
 <script>
     $(document).ready(function() {

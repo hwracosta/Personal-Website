@@ -255,6 +255,12 @@ border-radius: 12px;
 }
 
 .hero > img {
+    gap: 100px;
+}
+
+.hero .left-section .top h4 {
+    font-size: 16px;
+}
     max-width: 520px;
     width: 44%;
     border-radius: 26px;
@@ -263,12 +269,6 @@ border-radius: 12px;
 .hero .left-section {
     display: flex;
     flex-direction: column;
-    gap: 100px;
-}
-
-.hero .left-section .top h4 {
-    font-size: 16px;
-}
 
 .hero .left-section .top H1 {
     font-size: 36px;
