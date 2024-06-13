@@ -41,10 +41,8 @@
     <div class="bottom">
       <p>Our Other Socials:</p>
       <div class="icons">
-        <i class="ri-twitter-x-line"></i>
-        <a href="https://www.linkedin.com/in/jaydeesalazar/" target="_blank">
-          <i class="ri-linkedin-box-line"></i>
-        </a>
+        <i class="ri-twitter-x-line" onclick="openTwitterProfiles()"></i>
+        <i class="ri-linkedin-box-line" onclick="openLinkedInProfiles()"></i>
         <i class="ri-instagram-line" onclick="openInstagramAccounts()"></i>
       </div>
     </div>
@@ -116,9 +114,20 @@
 </footer>
 
 <script>
-  function openInstagramAccounts() {
+  function openInstagramAccounts()
+  {
       window.open("https://www.instagram.com/hazza.costa/", "_blank");
       window.open("https://www.instagram.com/ajmdsalazar/", "_blank");
+  }
+  function openLinkedInProfiles()
+  {
+    window.open("https://www.linkedin.com/in/jaydeesalazar/", "_blank");
+    window.open("https://www.linkedin.com/in/harryracosta/", "_blank");
+  }
+  function openTwitterProfiles()
+   {
+    window.open("https://x.com/NBA", "_blank");
+    window.open("https://x.com/LaLigaEN", "_blank");
   }
 </script>
 
