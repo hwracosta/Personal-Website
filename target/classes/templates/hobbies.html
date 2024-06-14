@@ -104,13 +104,13 @@
   let prev = document.querySelector('.hobbies-prev');
 
   next.addEventListener('click', function(){
-      let items = document.querySelectorAll('.hobbies-item');
-      document.querySelector('.hobbies-slide').appendChild(items[0]);
+    let items = document.querySelectorAll('.hobbies-item');
+    document.querySelector('.hobbies-slide').appendChild(items[0]);
   });
 
   prev.addEventListener('click', function(){
-      let items = document.querySelectorAll('.hobbies-item');
-      document.querySelector('.hobbies-slide').prepend(items[items.length - 1]);
+    let items = document.querySelectorAll('.hobbies-item');
+    document.querySelector('.hobbies-slide').prepend(items[items.length - 1]);
   });
 </script>
 
