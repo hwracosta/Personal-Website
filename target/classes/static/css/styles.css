@@ -1,3 +1,5 @@
+/* Styling common to the Home, Music, and Hobbies page */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 * {
@@ -106,126 +108,6 @@ nav button:hover {
 
 nav button i {
     font-size: 20px;
-}
-
-.music-showcase {
-    margin-top: 100px;
-    margin-left: 200px;
-}
-
-.music-showcase h2.music-title {
-    font-size: 24px;
-    color: #333;
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-.music-showcase p.music-info {
-    font-size: 16px;
-    color: #606060;
-    text-align: left;
-}
-
-.music-showcase .buttons {
-    margin-top: 18px;
-    display: flex;
-    justify-content: left;
-}
-
-.music-showcase .buttons .doc {
-    cursor: pointer;
-    font-size: 16px;
-    border: none;
-    padding: 10px 20px;
-    background: black;
-    color: #fff;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.buttons .git {
-    background: #fff;
-    color: #000;
-    border: 1px solid #dedede;
-    padding: 5px 20px; /
-border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-weight: 500;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.buttons .git:hover {
-    background: #1DB954;
-    color: #fff;
-    border-color: transparent;
-}
-
-.music-cards {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 20px;
-    flex: 1;
-}
-
-.card {
-    background: linear-gradient(135deg, #ff4a85, #6a4aee);
-    color: #fff;
-    border-radius: 16px;
-    padding: 20px;
-    width: 450px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-.music-cards.loaded .card {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: white;
-}
-
-.song {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.song img {
-    width: 95px;
-    height: 95px;
-    border-radius: 8px;
-}
-
-.song-info h3 {
-    font-size: 21px;
-    margin: 0;
-    color: white;
-}
-
-.song-info p {
-    font-size: 15px;
-    margin: 0;
-    color: #bbb;
 }
 
 .hero .left-section .top h4 {
@@ -535,7 +417,129 @@ footer a:hover {
     }
 }
 
-/* Hobbies Slider Styling */
+/* Music page styling */
+.music-showcase
+{
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.music-showcase h2.music-title {
+    font-size: 24px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.music-showcase p.music-info {
+    font-size: 16px;
+    color: #606060;
+    text-align: left;
+}
+
+.music-showcase .buttons {
+    margin-top: 18px;
+    display: flex;
+    justify-content: left;
+}
+
+.music-showcase .buttons .doc {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    background: black;
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.buttons .git {
+    background: #fff;
+    color: #000;
+    border: 1px solid #dedede;
+    padding: 5px 20px; /
+border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.buttons .git:hover {
+    background: #1DB954;
+    color: #fff;
+    border-color: transparent;
+}
+
+.music-cards {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    flex: 1;
+}
+
+.card {
+    background: linear-gradient(135deg, #ff4a85, #6a4aee);
+    color: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    width: 450px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.music-cards.loaded .card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.song {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.song img {
+    width: 95px;
+    height: 95px;
+    border-radius: 8px;
+}
+
+.song-info h3 {
+    font-size: 21px;
+    margin: 0;
+    color: white;
+}
+
+.song-info p {
+    font-size: 15px;
+    margin: 0;
+    color: #bbb;
+}
+
+/* Hobbies page styling */
 .hobbies-container {
     position: relative;
     margin-top: 120px;
@@ -546,6 +550,7 @@ footer a:hover {
     box-shadow: 0 30px 50px #dbdbdb;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -574,16 +579,16 @@ footer a:hover {
 }
 
 .hobbies-slide .hobbies-item:nth-child(3) {
-    left: 65%; /* Increase the left value to push the card further to the right */
+    left: 65%;
 }
 .hobbies-slide .hobbies-item:nth-child(4) {
-    left: calc(65% + 220px); /* Adjust the value to maintain the distance */
+    left: calc(65% + 220px);
 }
 .hobbies-slide .hobbies-item:nth-child(5) {
-    left: calc(65% + 440px); /* Adjust the value to maintain the distance */
+    left: calc(65% + 440px);
 }
 .hobbies-slide .hobbies-item:nth-child(n + 6) {
-    left: calc(65% + 660px); /* Adjust the value to maintain the distance */
+    left: calc(65% + 660px);
     opacity: 0;
 }
 
@@ -602,7 +607,7 @@ footer a:hover {
 .hobbies-content .hobbies-text {
     background-color: rgba(255, 255, 255, 0.60);
     padding: 10px;
-    border-radius: 0px;
+    border-radius: 20px;
     opacity: 0;
     animation: hobbies-animate 1s ease-in-out 1 forwards;
     display: flex;
@@ -651,7 +656,7 @@ footer a:hover {
     transform: translateY(-50%);
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1px;
 }
 
 .hobbies-button button {
