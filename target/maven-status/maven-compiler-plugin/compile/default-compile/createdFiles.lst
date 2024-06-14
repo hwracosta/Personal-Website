@@ -2,7 +2,6 @@ com/example/personalwebsite/repository/TodoRepository.class
 com/example/personalwebsite/service/TeamMemberService.class
 com/example/personalwebsite/controller/SongController.class
 com/example/personalwebsite/service/SongService.class
-com/example/personalwebsite/controller/TeamMemberController.class
 com/example/personalwebsite/PersonalWebsiteApplication.class
 com/example/personalwebsite/entity/Todo.class
 com/example/personalwebsite/controller/HomeController.class
