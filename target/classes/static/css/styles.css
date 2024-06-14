@@ -2,28 +2,33 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-* {
+*
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 }
 
-body {
+body
+{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-main {
+main
+{
     flex: 1;
 }
 
-a {
+a
+{
     text-decoration: none;
 }
 
-button {
+button
+{
     cursor: pointer;
     font-size: 16px;
     border: none;
@@ -39,11 +44,13 @@ button {
     transition: all 0.3s ease;
 }
 
-img {
+img
+{
     object-fit: cover;
 }
 
-nav {
+nav
+{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,12 +64,14 @@ nav {
     padding: 12px;
 }
 
-nav .nav-links {
+nav .nav-links
+{
     display: flex;
     gap: 24px;
 }
 
-nav .nav-links a {
+nav .nav-links a
+{
     position: relative;
     padding: 10px 0 8px 0;
     font-size: 14px;
@@ -70,7 +79,8 @@ nav .nav-links a {
     transition: all 0.3s ease;
 }
 
-nav .nav-links a::after {
+nav .nav-links a::after
+{
     content: "";
     position: absolute;
     height: 2px;
@@ -81,11 +91,13 @@ nav .nav-links a::after {
     transition: all 0.3s ease;
 }
 
-nav .nav-links a:hover::after {
+nav .nav-links a:hover::after
+{
     width: 100%;
 }
 
-nav button {
+nav button
+{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,17 +112,20 @@ nav button {
     transition: all 0.3s ease;
 }
 
-nav button:hover {
+nav button:hover
+{
     color: #000;
     background: #fff;
     border-color: #dedede;
 }
 
-nav button i {
+nav button i
+{
     font-size: 20px;
 }
 
-.hero .left-section .top h4 {
+.hero .left-section .top h4
+{
     font-size: 24px;
     font-weight: 600;
     color: #333;
@@ -119,14 +134,16 @@ nav button i {
     letter-spacing: 1.5px;
 }
 
-.hero .left-section .top h1 span {
+.hero .left-section .top h1 span
+{
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px black;
     font-weight: bold;
     color: #000;
 }
 
-.hero {
+.hero
+{
     margin-top: 80px;
     height: calc(100vh - 80px);
     padding: 0 60px;
@@ -136,57 +153,67 @@ nav button i {
     gap: 30px;
 }
 
-.hero > img {
+.hero > img
+{
     max-width: 520px;
     width: 44%;
     border-radius: 26px;
 }
 
-.hero .left-section {
+.hero .left-section
+{
     display: flex;
     flex-direction: column;
     gap: 100px;
 }
 
-.hero .left-section .top h4 {
+.hero .left-section .top h4
+{
     font-size: 16px;
 }
 
-.hero .left-section .top H1 {
+.hero .left-section .top H1
+{
     font-size: 36px;
     margin-bottom: 24px;
 }
 
-.hero .left-section .top p {
+.hero .left-section .top p
+{
     color: #606060;
     font-size: 22px;
     margin-bottom: 24px;
     text-align: justify;
 }
 
-.hero .left-section .top .buttons {
+.hero .left-section .top .buttons
+{
     display: flex;
     gap: 8px;
 }
 
-.hero .left-section .top .buttons button.doc {
+.hero .left-section .top .buttons button.doc
+{
     background: #000;
     color: #fff;
 }
 
-.hero .left-section .top .buttons button.git:hover {
+.hero .left-section .top .buttons button.git:hover
+{
     background: #000;
     color: #fff;
     border-color: transparent;
 }
 
-.hero .left-section .bottom p {
+.hero .left-section .bottom p
+{
     font-size: 14px;
     color: #606060;
     margin-bottom: 10px;
 }
 
-.hero .left-section .bottom .icons {
+.hero .left-section .bottom .icons
+{
     margin-left: 10px;
     display: flex;
     align-items: center;
@@ -196,7 +223,8 @@ nav button i {
     width: fit-content;
 }
 
-.projects {
+.projects
+{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,7 +233,8 @@ nav button i {
     padding: 50px;
 }
 
-.projects > p {
+.projects > p
+{
     font-size: 20px;
     color: #606060;
     border: 1px solid #e8e8e8;
@@ -215,19 +244,22 @@ nav button i {
     background: #fff;
 }
 
-.projects > h2 {
+.projects > h2
+{
     font-size: 22px;
     text-align: center;
     margin-bottom: 30px;
 }
 
-.projects .items {
+.projects .items
+{
     display: flex;
     justify-content: center;
     gap: 24px;
 }
 
-.projects .items .item {
+.projects .items .item
+{
     width: 26%;
     border: 1px solid #e8e8e8;
     border-radius: 16px;
@@ -235,7 +267,8 @@ nav button i {
     padding: 0 0 30px;
 }
 
-.projects .items .item .inner {
+.projects .items .item .inner
+{
     background: #1f1f1f;
     padding: 24px;
     border-radius: 16px;
@@ -244,81 +277,95 @@ nav button i {
     color: #fff;
 }
 
-.projects .items .item .inner img {
+.projects .items .item .inner img
+{
     width: 100%;
     margin-bottom: 16px;
     border-radius: 12px;
 }
 
-.projects .items .item .inner a {
+.projects .items .item .inner a
+{
     font-size: 18px;
     color: #fff;
     margin-bottom: 10px;
     display: block;
 }
 
-.projects .items .item .inner p {
+.projects .items .item .inner p
+{
     color: #ddd;
     font-size: 15px;
 }
 
-.contact {
+.contact
+{
     padding: 100px 60px;
     background: #f5f5f5;
 }
 
-.contact > h2 {
+.contact > h2
+{
     font-size: 36px;
     margin-bottom: 40px;
 }
 
-.contact .items {
+.contact .items
+{
     display: flex;
     background: #fff;
     border-radius: 12px;
 }
 
-.contact .items .item {
+.contact .items .item
+{
     width: 50%;
     padding: 30px;
     border: 1px solid #dedede;
 }
 
-.contact .items .item:nth-child(1) {
+.contact .items .item:nth-child(1)
+{
     border-radius: 12px 0 0 12px;
 }
 
-.contact .items .item:nth-child(2) {
+.contact .items .item:nth-child(2)
+{
     border-radius: 0 12px 12px 0;
 }
 
-.contact .items .item a {
+.contact .items .item a
+{
     font-size: 24px;
     color: #000;
     display: inline-block;
     margin-bottom: 16px;
 }
 
-.contact .items .item p {
+.contact .items .item p
+{
     font-size: 20px;
     color: #606060;
     margin-bottom: 26px;
 }
 
-.contact .items .item button {
+.contact .items .item button
+{
     padding: 10px 24px;
     background: #000;
     color: #fff;
     transition: all 0.3s ease;
 }
 
-.contact .items .item button:hover {
+.contact .items .item button:hover
+{
     color: #000;
     background: #fff;
     border-color: #dedede;
 }
 
-footer {
+footer
+{
     background: #1f1f1f;
     border-radius: 24px 24px 0 0;
     padding: 30px;
@@ -330,68 +377,84 @@ footer {
 }
 
 footer p,
-footer a {
+footer a
+{
     font-size: 13px;
     color: #606060;
     transition: all 0.3s ease;
 }
 
-footer a:hover {
+footer a:hover
+{
     color: #fff;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px)
+{
     nav,
-    nav .nav-links {
+    nav .nav-links
+    {
         gap: 16px;
     }
 
-    nav button {
+    nav button
+    {
         display: none;
     }
 
-    .hero {
+    .hero
+    {
         padding: 0 40px;
     }
 
-    .hero > img {
+    .hero > img
+    {
         width: 55%;
     }
 
-    .projects > h2 {
+    .projects > h2
+    {
         font-size: 18px;
     }
 
-    .projects .items .item {
+    .projects .items .item
+    {
         width: 100%;
     }
 
-    .projects .items .item .inner img {
+    .projects .items .item .inner img
+    {
         height: 65%;
         max-height: 250px;
     }
 
-    .contact {
+    .contact
+    {
         padding: 100px 40px;
     }
 
-    .contact > h2 {
+    .contact > h2
+    {
         font-size: 22px;
     }
 
-    .contact .items {
+    .contact .items
+    {
         flex-wrap: wrap;
     }
 
-    .contact .items .item {
+    .contact .items .item
+    {
         width: 100%;
     }
 
-    .contact .items .item:nth-child(1) {
+    .contact .items .item:nth-child(1)
+    {
         border-radius: 12px 12px 0 0;
     }
 
-    .contact .items .item:nth-child(2) {
+    .contact .items .item:nth-child(2)
+    {
         border-radius: 0 0 12px 12px;
     }
 
@@ -424,26 +487,30 @@ footer a:hover {
     margin-left: 200px;
 }
 
-.music-showcase h2.music-title {
+.music-showcase h2.music-title
+{
     font-size: 24px;
     color: #333;
     text-align: left;
     margin-bottom: 10px;
 }
 
-.music-showcase p.music-info {
+.music-showcase p.music-info
+{
     font-size: 16px;
     color: #606060;
     text-align: left;
 }
 
-.music-showcase .buttons {
+.music-showcase .buttons
+{
     margin-top: 18px;
     display: flex;
     justify-content: left;
 }
 
-.music-showcase .buttons .doc {
+.music-showcase .buttons .doc
+{
     cursor: pointer;
     font-size: 16px;
     border: none;
@@ -459,7 +526,8 @@ footer a:hover {
     transition: all 0.3s ease;
 }
 
-.buttons .git {
+.buttons .git
+{
     background: #fff;
     color: #000;
     border: 1px solid #dedede;
@@ -475,13 +543,15 @@ border-radius: 12px;
     cursor: pointer;
 }
 
-.buttons .git:hover {
+.buttons .git:hover
+{
     background: #1DB954;
     color: #fff;
     border-color: transparent;
 }
 
-.music-cards {
+.music-cards
+{
     display: flex;
     gap: 40px;
     justify-content: center;
@@ -490,7 +560,8 @@ border-radius: 12px;
     flex: 1;
 }
 
-.card {
+.card
+{
     background: linear-gradient(135deg, #ff4a85, #6a4aee);
     color: #fff;
     border-radius: 16px;
@@ -502,45 +573,52 @@ border-radius: 12px;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-.music-cards.loaded .card {
+.music-cards.loaded .card
+{
     opacity: 1;
     transform: translateY(0);
 }
 
-.card h2 {
+.card h2
+{
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
     color: white;
 }
 
-.song {
+.song
+{
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
 }
 
-.song img {
+.song img
+{
     width: 95px;
     height: 95px;
     border-radius: 8px;
 }
 
-.song-info h3 {
+.song-info h3
+{
     font-size: 21px;
     margin: 0;
     color: white;
 }
 
-.song-info p {
+.song-info p
+{
     font-size: 15px;
     margin: 0;
     color: #bbb;
 }
 
 /* Hobbies page styling */
-.hobbies-container {
+.hobbies-container
+{
     position: relative;
     margin-top: 120px;
     margin-bottom: 80px;
@@ -554,7 +632,8 @@ border-radius: 12px;
     overflow: hidden;
 }
 
-.hobbies-slide .hobbies-item {
+.hobbies-slide .hobbies-item
+{
     width: 200px;
     height: 300px;
     position: absolute;
@@ -569,7 +648,8 @@ border-radius: 12px;
 }
 
 .hobbies-slide .hobbies-item:nth-child(1),
-.hobbies-slide .hobbies-item:nth-child(2) {
+.hobbies-slide .hobbies-item:nth-child(2)
+{
     top: 0;
     left: 0;
     transform: translate(0, 0);
@@ -578,21 +658,26 @@ border-radius: 12px;
     height: 100%;
 }
 
-.hobbies-slide .hobbies-item:nth-child(3) {
+.hobbies-slide .hobbies-item:nth-child(3)
+{
     left: 65%;
 }
-.hobbies-slide .hobbies-item:nth-child(4) {
+.hobbies-slide .hobbies-item:nth-child(4)
+{
     left: calc(65% + 220px);
 }
-.hobbies-slide .hobbies-item:nth-child(5) {
+.hobbies-slide .hobbies-item:nth-child(5)
+{
     left: calc(65% + 440px);
 }
-.hobbies-slide .hobbies-item:nth-child(n + 6) {
+.hobbies-slide .hobbies-item:nth-child(n + 6)
+{
     left: calc(65% + 660px);
     opacity: 0;
 }
 
-.hobbies-item .hobbies-content {
+.hobbies-item .hobbies-content
+{
     position: absolute;
     top: 45%;
     left: 100px;
@@ -604,7 +689,8 @@ border-radius: 12px;
     display: none;
 }
 
-.hobbies-content .hobbies-text {
+.hobbies-content .hobbies-text
+{
     background-color: rgba(255, 255, 255, 0.60);
     padding: 10px;
     border-radius: 20px;
@@ -615,27 +701,32 @@ border-radius: 12px;
 }
 
 .hobbies-content .hobbies-name,
-.hobbies-content .hobbies-des {
+.hobbies-content .hobbies-des
+{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     padding: 5px;
     margin: 0;
 }
 
-.hobbies-slide .hobbies-item:nth-child(2) .hobbies-content {
+.hobbies-slide .hobbies-item:nth-child(2) .hobbies-content
+{
     display: block;
 }
 
-.hobbies-content .hobbies-name {
+.hobbies-content .hobbies-name
+{
     font-size: 40px;
     font-weight: bold;
 }
 
-.hobbies-content .hobbies-des {
+.hobbies-content .hobbies-des
+{
     margin-top: 10px;
     margin-bottom: 20px;
 }
 
-@keyframes hobbies-animate {
+@keyframes hobbies-animate
+{
     from {
         opacity: 0;
         transform: translate(0, 100px);
@@ -648,7 +739,8 @@ border-radius: 12px;
     }
 }
 
-.hobbies-button {
+.hobbies-button
+{
     width: 100%;
     text-align: center;
     position: absolute;
@@ -659,7 +751,8 @@ border-radius: 12px;
     gap: 1px;
 }
 
-.hobbies-button button {
+.hobbies-button button
+{
     width: 40px;
     height: 35px;
     border-radius: 8px;
@@ -672,7 +765,8 @@ border-radius: 12px;
     transition: background 0.3s, color 0.3s;
 }
 
-.hobbies-button button:hover {
+.hobbies-button button:hover
+{
     background: #000;
     color: #fff;
 }
