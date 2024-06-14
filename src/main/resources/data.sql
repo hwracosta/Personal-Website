@@ -19,4 +19,5 @@ INSERT INTO song (id, title, artist, album_artwork_url, team_member_id) VALUES (
 INSERT INTO song (id, title, artist, album_artwork_url, team_member_id) VALUES (10, 'Cool Down', 'Kolohe Kai', 'https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/5d/5d/f2/5d5df202-ea92-43c4-6eb3-bb5dc5beee06/mzi.qkaoftve.jpg/600x600bb.jpg', 2) ON CONFLICT (id) DO NOTHING;
 
 -- Update template, don't forget to change team_member_id and id as well
-UPDATE song SET title = 'title', artist = 'artist', album_artwork_url = 'image link', team_member_id = 1 WHERE id = 1;
+UPDATE song SET title = 'POP!', artist = 'NAYEON', album_artwork_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/3f/49/ec/3f49ecb2-cb91-dd28-45b9-a31326d7e63b/738676859614_Cover.jpg/600x600bb.jpg', team_member_id = 2 WHERE id = 10;
+UPDATE song SET title = 'Cool Down', artist = 'Kolohe Kai', album_artwork_url = 'https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/5d/5d/f2/5d5df202-ea92-43c4-6eb3-bb5dc5beee06/mzi.qkaoftve.jpg/600x600bb.jpg', team_member_id = 2 WHERE id = 10;

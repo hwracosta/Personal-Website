@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/todos">To-Do List</a></li>
+        <li><a href="/music">Music</a></li>
+        <li><a href="/hobbies">Hobbies</a></li>
+    </ul>
+</nav>
+<h1>Team Members</h1>
+<form th:action="@{/team-members}" th:object="${teamMember}" method="post">
+    <input type="text" th:field="*{name}" placeholder="Enter team member name" required>
+    <button type="submit">Add</button>
+</form>
+<ul>
+    <li th:each="teamMember : ${teamMembers}">
+        <span th:text="${teamMember.name}"></span>
+        <a th:href="@{'/team-members/' + ${teamMember.id} + '/delete'}">Delete</a>
+    </li>
+</ul>
+</body>
+</html>
